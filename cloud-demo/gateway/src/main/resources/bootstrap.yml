@@ -1,0 +1,10 @@
+# 客户端针对于nacos注册中心与配置中心的相关配置
+# nacos 客户端配置信息:
+spring:
+  cloud:
+    nacos:
+      #nacos服务地址
+      server-addr: localhost:8848
+      #集群属性配置
+      discovery:
+        cluster-name: SH #集群名称：SH-上海
