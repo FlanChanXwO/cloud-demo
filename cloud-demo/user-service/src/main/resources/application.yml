@@ -11,17 +11,6 @@ spring:
     #当前环境
     active: dev #开发环境-dev
 
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:6603/cloud_user?useSSL=false
-    username: FlanChan
-    password: wingofmystery
-
-mybatis:
-  type-aliases-package: cn.itcast.user.pojo
-  configuration:
-    map-underscore-to-camel-case: true
-
 logging:
   level:
     cn.itcast: debug
