@@ -1,0 +1,6 @@
+# Project exclude paths
+/cloud-demo/eureka-server/target/
+/cloud-demo/feign-api/target/
+/cloud-demo/gateway/target/
+/cloud-demo/order-service/target/
+/cloud-demo/user-service/target/

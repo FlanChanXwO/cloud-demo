@@ -1,0 +1,36 @@
+server:
+  port: 8081
+spring:
+  main:
+    #允许重复重写bean定义
+    allow-bean-definition-overriding: true
+  application:
+    #服务名称
+    name: userservice #user的服务名称
+  profiles:
+    #当前环境
+    active: dev #开发环境-dev
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:6603/cloud_user?useSSL=false
+    username: FlanChan
+    password: wingofmystery
+
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
+## euraka client properties:
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+

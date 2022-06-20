@@ -1,0 +1,59 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    #允许重写bean定义
+    allow-bean-definition-overriding: true
+  application:
+    name: orderservice
+  profiles:
+    include: feign
+
+
+
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      #配置集群属性
+      discovery:
+        cluster-name: SH
+        # namespace 命名空间 用于不同类型或地域所在服务的环境隔离，被隔离的服务不能调用其它命名空间的服务
+       # namespace: e56297ba-dd21-407d-b753-aee97ef19c09 #指定命名空间，此处需要命名空间的ID
+        ephemeral: false #是否为临时实例
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:6603/cloud_order?useSSL=false
+    username: FlanChan
+    password: wingofmystery
+
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
+#配置负载均衡规则
+userservice:
+  ribbon:
+    # nacos 负载均衡规则：com.alibaba.cloud.nacos.ribbon.NacosRule
+    # nacos 的负载均衡规则会根据最近的集群服务地区来进行调节
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+
+#euraka properties:
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+##启用饥饿加载，在服务启动时就加载服务资源
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients:
+#      - userservice
+

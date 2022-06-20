@@ -1,0 +1,8 @@
+# 自定义Feign的配置
+feign:
+  client:
+    config:
+      #default: 全局生效
+      #服务名: 局部生效
+      userservice: # 针对于"userservice"生效的日志级别设置
+        logger-level: FULL

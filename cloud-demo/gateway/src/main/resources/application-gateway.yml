@@ -1,0 +1,16 @@
+server:
+  port: 10010 #网关端口
+
+spring:
+  cloud:
+    gateway:
+      #进行路由相关的配置
+      routes:
+        - id: user-service   #路由ID，需要唯一
+          uri: lb://userservice #路由的目标地址，lb表示负载均衡链接，后面为服务名称
+          predicates: #路由断言，判断是否符合路由规则的条件
+            - Path=/user/**
+        - id: order-service
+          uri: lb://orderservice
+          predicates:
+            - Path=/order/**

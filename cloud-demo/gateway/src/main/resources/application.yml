@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: gateway #服务名称
+  profiles:
+    include: gateway , nacos #导入的配置文件
