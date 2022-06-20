@@ -10,6 +10,7 @@ spring:
   profiles:
     #当前环境
     active: dev #开发环境-dev
+    include: dao
 
 logging:
   level:
