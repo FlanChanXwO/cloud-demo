@@ -15,3 +15,15 @@ userservice:
     # nacos 负载均衡规则：com.alibaba.cloud.nacos.ribbon.NacosRule
     # nacos 的负载均衡规则会根据最近的集群服务地区来进行调节
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+
+# eurake注册中心相关配置
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+##启用饥饿加载，在服务启动时就加载服务资源
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients:
+#      - userservice
