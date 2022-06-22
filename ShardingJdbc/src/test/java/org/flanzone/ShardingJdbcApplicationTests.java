@@ -22,13 +22,7 @@ class ShardingJdbcApplicationTests {
 
 	@Test
 	void insertTest() {
-		for (char c = 'a'; c <= 'z' ; c++) {
-			Student student = new Student();
-			student.setSname("Tomcat"+ c + c + c);
-			student.setSex("男");
-
-			studentMapper.insert(student);
-		}
+		studentMapper.insert(new Student(null,"FlanChan","女"));
 	}
 
 
