@@ -3,7 +3,7 @@ spring:
     nacos:
       server-addr: localhost:8848
       #配置集群属性
-      discovery:
+      discovery:ll
         cluster-name: SH
         # namespace 命名空间 用于不同类型或地域所在服务的环境隔离，被隔离的服务不能调用其它命名空间的服务
         # namespace: e56297ba-dd21-407d-b753-aee97ef19c09 #指定命名空间，此处需要命名空间的ID
